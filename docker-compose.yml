@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  manastone_website:
+    container_name: manastone
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.manastone.rule=Host(`app.manastone.fr`)"
+      - "traefik.http.routers.manastone.entrypoints=websecure"
+      - "traefik.http.routers.manastone.tls.certresolver=myresolver"
+    networks:
+      - web_proxy
+
+networks:
+  web_proxy:
+    external: true
