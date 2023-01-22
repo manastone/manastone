@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  manastone_website:
+  manastone:
     container_name: manastone
     build:
       context: .
