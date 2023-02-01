@@ -1,6 +1,14 @@
-import "../assets/scss/global.scss";
-import type { AppProps } from "next/app";
+import '../assets/scss/global.scss';
+import type { AppProps } from 'next/app';
+import { AppKit } from 'manakit';
+import { appWithTranslation } from 'next-i18next';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <AppKit>
+      <Component {...pageProps} />
+    </AppKit>
+  );
 }
+
+export default appWithTranslation(App);
