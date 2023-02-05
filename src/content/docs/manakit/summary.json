@@ -1,0 +1,35 @@
+[
+  {
+    "category": "introduction",
+    "children": [{ "name": "why manakit", "slug": "why-manakit" }]
+  },
+  {
+    "category": "getting-started",
+    "children": [
+      { "name": "installation", "slug": "installation" },
+      { "name": "browser support", "slug": "browser-support" }
+    ]
+  },
+  {
+    "category": "features",
+    "children": [
+      { "name": "Layout", "slug": "demo2" },
+      { "name": "Display", "slug": "display" }
+    ]
+  },
+  {
+    "category": "styles",
+    "children": [
+      { "name": "Flex", "slug": "flex" },
+      { "name": "Float", "slug": "float" },
+      { "name": "Spacing", "slug": "Spacing" }
+    ]
+  },
+  {
+    "category": "components",
+    "children": [
+      { "name": "Alert", "slug": "demo-uno" },
+      { "name": "Application", "slug": "demo" }
+    ]
+  }
+]

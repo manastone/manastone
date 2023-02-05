@@ -1,7 +1,5 @@
-import Head from 'next/head';
-
-import Layout from '../../container/layout';
-
-export default function Acknowledgements() {
-  return <Layout>acknowledgements</Layout>;
-}
+/* eslint-disable react/no-unescaped-entities */
+const Acknowledgements = () => {
+  return <div className="mt-3">Merci</div>;
+};
+export default Acknowledgements;
