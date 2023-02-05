@@ -4,7 +4,7 @@ import Image from 'next/image';
 // import matter from 'gray-matter';
 import Link from 'next/link';
 
-import menu from '../content/docs/manakit/summary.json';
+import menu from '../content/docs/manakit/menu.json';
 import { Fragment } from 'react';
 
 const Sidebar = ({ posts, list }: any) => {
