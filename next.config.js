@@ -5,15 +5,15 @@ const nextConfig = {
   i18n,
   reactStrictMode: true,
   swcMinify: true,
-  async redirects() {
-    return [
-      {
-        source: '/:locale/:path',
-        destination: '/en/:path*',
-        permanent: true,
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/:locale/ma,a',
+  //       destination: '/en/:path*',
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
 };
 
 /**
