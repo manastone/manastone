@@ -24,14 +24,16 @@ const DocumentationManaKit = ({ frontMatter: { title }, mdxSource }: any) => {
 
 export default DocumentationManaKit;
 
-export const getStaticPaths = async () => {
-  const folders = fs.readdirSync(path.join(pathFiles));
+export const getStaticPaths = async ({ locales, defaultLocale }: any) => {
+  const folders = fs.readdirSync(path.join(pathFiles + '/' + defaultLocale));
+
   let pathsList: any = [];
   folders.map((folder) => {
     if (!folder.includes('.mdx') && !folder.includes('.json') && !folder.includes('.tsx') && !folder.includes('.ts')) {
-      const files = fs.readdirSync(path.join(pathFiles + '/' + folder));
-
-      return files.map((filename) => pathsList.push([folder, filename]));
+      const files = fs.readdirSync(path.join(pathFiles + '/' + defaultLocale + '/' + folder));
+      locales.map((lang: any) => {
+        return files.map((filename) => pathsList.push([folder, filename, lang]));
+      });
     }
   });
 
@@ -39,6 +41,7 @@ export const getStaticPaths = async () => {
     params: {
       slug: [filename[0], filename[1].replace('.mdx', '')],
     },
+    locale: filename[2],
   }));
   return {
     paths,
@@ -46,16 +49,29 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params: { slug } }: any) => {
-  let markdownWithMeta;
+export const getStaticProps = async ({ locale, params: { slug } }: any) => {
+  let markdownWithMeta, pathFile;
+
+  // control file exist !
   if (slug[0] !== undefined) {
-    markdownWithMeta = fs.readFileSync(path.join(pathFiles + '/' + slug[0], slug[1] + '.mdx'), 'utf-8');
+    pathFile = path.join(pathFiles + '/' + locale + '/' + slug[0], slug[1] + '.mdx');
   } else {
-    markdownWithMeta = fs.readFileSync(path.join(pathFiles, slug[1] + '.mdx'), 'utf-8');
+    pathFile = path.join(pathFiles + '/' + locale, slug[1] + '.mdx');
+  }
+  try {
+    fs.accessSync(pathFile, fs.constants.R_OK);
+    markdownWithMeta = fs.readFileSync(pathFile, 'utf-8');
+  } catch (err) {
+    if (slug[0] !== undefined) {
+      markdownWithMeta = fs.readFileSync(path.join(pathFiles + '/' + 'en' + '/' + slug[0], slug[1] + '.mdx'), 'utf-8');
+    } else {
+      markdownWithMeta = fs.readFileSync(path.join(pathFiles + '/' + 'en' + '/', slug[1] + '.mdx'), 'utf-8');
+    }
   }
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
   const mdxSource = await serialize(content);
+
   return {
     props: {
       frontMatter,
