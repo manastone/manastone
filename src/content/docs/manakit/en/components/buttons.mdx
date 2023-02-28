@@ -1,0 +1,179 @@
+---
+nav: Buttons
+meta:
+  title: Button component
+  description: The button component communicates actions that a user can take and are typically placed in dialogs, forms, cards and toolbars.
+  keywords: buttons, manakit button component, react button component
+related:
+  - /components/icons/
+---
+
+# Buttons
+
+The **Btn** component replaces the standard html button with a ManaKit theme and a multitude of options. Any color helper class can be used to alter the background or text color.
+
+<RenderBtnDefault />
+
+#### Tag
+
+With ManaKit, you have possibility to change type for button. you have a possibility to use **anchor** or **button**. If you use hraf in **Btn** component, the button change to anchor.
+With **Next.js** your have a possibility to add **Link**.
+
+<Sample>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
+    <Btn>Button</Btn>
+    <Btn href="https://manastone.fr" target={'_blank'}>
+      <span>Anchor</span>
+    </Btn>
+  </div>
+</Sample>
+
+## Sample
+
+### Variant
+
+The **variant** props gives you easy access to several different button styles. Available variants are: **default**, **flat**, **outlined**, **text**.
+
+<Sample>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
+    <Btn>Default</Btn>
+    <Btn outlined>Outlined</Btn>
+    <Btn text>Text</Btn>
+    <Btn flat>Flat</Btn>
+  </div>
+</Sample>
+
+### Block
+
+**block** buttons extend the full available width.
+
+<Sample>
+  <div className="fill-height">
+    <Btn block>Block</Btn>
+  </div>
+</Sample>
+
+### Outlined
+
+**outlined** buttons inherit their borders from the current color applied.
+
+<Sample>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
+    <Btn outlined>Outlined</Btn>
+    <Btn outlined icon>
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+    </Btn>
+  </div>
+</Sample>
+
+### Flat
+
+**flat** buttons still maintain their background color, but have no box shadow with **elevation**.
+
+<Sample>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
+    <Btn flat>Default</Btn>
+    <Btn flat color="secondary" className="white--text">
+      <span>Secondary</span>
+    </Btn>
+    <Btn flat color="error" className="white--text">
+      <span>Error</span>
+    </Btn>
+    <Btn flat color="tertiary" disabled className="white--text">
+      <span>Disabled</span>
+    </Btn>
+  </div>
+</Sample>
+
+### Icon
+
+**Icons** can be used for the primary content of a button.
+
+<Sample>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
+    <Btn color="primary" icon className="white--text">
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+    </Btn>
+    <Btn color="secondary" icon className="white--text">
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+    </Btn>
+    <Btn color="tertiary" icon className="white--text">
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+    </Btn>
+    <Btn color="error" icon className="white--text">
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+    </Btn>
+    <Btn color="warning" icon disabled>
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+    </Btn>
+  </div>
+</Sample>
+
+### Rounded
+
+Use the **rounded** prop to control the border radius of buttons.
+
+<Sample>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
+    <Btn color="primary" className="white--text">
+      <span>Default Button</span>
+    </Btn>
+    <Btn color="primary" rounded="lg" className="white--text">
+      <span>Rounded Button</span>
+    </Btn>
+    <Btn color="primary" rounded="0" className="white--text">
+      <span>Tile Button</span>
+    </Btn>
+    <Btn color="primary" rounded="pill" className="white--text">
+      <span>Pill Button</span>
+    </Btn>
+  </div>
+</Sample>
+
+### Loaders
+
+Using the loading prop, you can notify a user that there is processing taking place. The default behavior is to use a **ProgressCircular** component but this can be customized with the loader slot.
+
+<Sample>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
+    <Btn loading={true}>Default Button</Btn>
+    <Btn loading={true} icon>
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+    </Btn>
+  </div>
+</Sample>
+
+### Sizing
+
+Buttons can be given different sizing options to fit a multitude of scenarios.
+
+<Sample>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height mb-8">
+    <Btn size="xs">Extra small Button</Btn>
+    <Btn size="sm">Small Button</Btn>
+    <Btn size="md">Normal Button</Btn>
+    <Btn size="lg">Large Button</Btn>
+    <Btn size="xl">Extra large Button</Btn>
+  </div>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
+    <Btn size="xs" icon>
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" xSmall />
+    </Btn>
+    <Btn size="sm" icon>
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" Small />
+    </Btn>
+    <Btn size="md" icon>
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
+    </Btn>
+    <Btn size="lg" icon>
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" large />
+    </Btn>
+    <Btn size="xl" icon>
+      <Icon icon="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" xLarge />
+    </Btn>
+  </div>
+</Sample>
+
+## Props
+
+<BtnProps />

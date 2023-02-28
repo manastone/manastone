@@ -1,0 +1,114 @@
+---
+nav: Toolbar
+meta:
+  title: Toolbar component
+  description: The icon component is compatible with multiple common icon fonts such as Material Design Icons and more.
+  keywords: toolbar, manakit toolbar component, react toolbar component
+related:
+  - /components/icons/
+---
+
+# Toolbar
+
+The **Toolbar** component is pivotal to any graphical user interface (GUI), as it generally is the primary source of site navigation. The toolbar component works great in conjunction with **NavigationDrawer** and **Card**.
+
+A **Toolbar** is a flexible container that can be used in a number of ways. By default, the **Toolbar** is 64px high on desktop and 56px high on mobile. There are a number of helper components available to use with the **Toolbar**. The **ToolbarTitle** is used for displaying a title and **ToolbarItems** allow **Btn** to extend full height.
+
+<RenderToolbarDefault />
+
+## Sample
+
+### Dense toolbars
+
+Dense toolbars reduce their height to 48px.
+
+<Sample>
+  <div className="d-flex flex-column">
+    <Toolbar dense>
+      <ToolbarTitle>Title</ToolbarTitle>
+      <Spacer />
+      <Btn icon text color="primary">
+        <Icon icon="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+      </Btn>
+      <Btn icon text color="secondary">
+        <Icon icon="M13 20.5C13 21.03 13.09 21.53 13.26 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H7V9L9.5 7.5L12 9V2H18C19.1 2 20 2.89 20 4V11H16.5V16.11C14.5 16.57 13 18.36 13 20.5M20 13H18.5V18.21C18.19 18.07 17.86 18 17.5 18C16.12 18 15 19.12 15 20.5S16.12 23 17.5 23 20 21.88 20 20.5V15H22V13H20Z" />
+      </Btn>
+    </Toolbar>
+  </div>
+</Sample>
+
+### Toolbar title
+
+For add title in your **Toolbar**, you can use **ToolbarTitle** components
+
+<Sample>
+  <div className="d-flex flex-column">
+    <Toolbar>
+      <ToolbarTitle>Title</ToolbarTitle>
+    </Toolbar>
+  </div>
+</Sample>
+
+### Toolbar Items
+
+For add items in your **Toolbar**, you can use **ToolbarItems** components
+
+<Sample>
+  <div className="d-flex flex-column">
+    <Toolbar>
+      <ToolbarTitle>Title</ToolbarTitle>
+      <ToolbarItems>Item 1</ToolbarItems>
+      <ToolbarItems>Item 2</ToolbarItems>
+      <ToolbarItems>Item 3</ToolbarItems>
+    </Toolbar>
+
+  </div>
+</Sample>
+
+### Colors
+
+Using color helpers you can change the color of an icon from the standard dark and light themes.
+
+<Sample>
+  <div className="d-flex flex-column pa-4">
+    <Toolbar color="primary">
+      <ToolbarTitle>Title</ToolbarTitle>
+      <Spacer />
+      <Btn icon text>
+        <Icon icon="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+      </Btn>
+      <Btn icon text>
+        <Icon icon="M13 20.5C13 21.03 13.09 21.53 13.26 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H7V9L9.5 7.5L12 9V2H18C19.1 2 20 2.89 20 4V11H16.5V16.11C14.5 16.57 13 18.36 13 20.5M20 13H18.5V18.21C18.19 18.07 17.86 18 17.5 18C16.12 18 15 19.12 15 20.5S16.12 23 17.5 23 20 21.88 20 20.5V15H22V13H20Z" />
+      </Btn>
+    </Toolbar>
+  </div>
+<div className="d-flex flex-column pa-4">
+    <Toolbar color="success" flat>
+      <ToolbarTitle>Title</ToolbarTitle>
+      <Spacer />
+      <Btn icon text>
+        <Icon icon="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+      </Btn>
+      <Btn icon text>
+        <Icon icon="M13 20.5C13 21.03 13.09 21.53 13.26 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H7V9L9.5 7.5L12 9V2H18C19.1 2 20 2.89 20 4V11H16.5V16.11C14.5 16.57 13 18.36 13 20.5M20 13H18.5V18.21C18.19 18.07 17.86 18 17.5 18C16.12 18 15 19.12 15 20.5S16.12 23 17.5 23 20 21.88 20 20.5V15H22V13H20Z" />
+      </Btn>
+    </Toolbar>
+    </div>
+<div className="d-flex flex-column pa-4">
+    <Toolbar color="warning" outlined>
+      <ToolbarTitle>Title</ToolbarTitle>
+      <Spacer />
+      <Btn icon text>
+        <Icon icon="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+      </Btn>
+      <Btn icon text>
+        <Icon icon="M13 20.5C13 21.03 13.09 21.53 13.26 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H7V9L9.5 7.5L12 9V2H18C19.1 2 20 2.89 20 4V11H16.5V16.11C14.5 16.57 13 18.36 13 20.5M20 13H18.5V18.21C18.19 18.07 17.86 18 17.5 18C16.12 18 15 19.12 15 20.5S16.12 23 17.5 23 20 21.88 20 20.5V15H22V13H20Z" />
+      </Btn>
+    </Toolbar>
+
+  </div>
+</Sample>
+
+## Props
+
+<ToolbarProps />

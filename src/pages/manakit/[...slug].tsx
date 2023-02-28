@@ -8,16 +8,56 @@ import Sidebar from '../../components/Sidebar';
 import { MDXRemote } from 'next-mdx-remote';
 import { Fragment } from 'react';
 
+import { Btn, Icon, Toolbar, ToolbarItems, ToolbarTitle, Spacer, AppBar, AppBarTitle, Container } from 'manakit';
+
+import Sample from '../../components/codes/Sample';
+
 const pathFiles = 'src/content/docs/manakit';
+
+import { RenderBtnDefault, BtnProps } from '../../sample/Btn';
+import { RenderIconDefault, IconProps } from '../../sample/Icon';
+import { RenderToolbarDefault, ToolbarProps } from '../../sample/Toolbar';
+import { RenderBottomNavigationDefault, BottomNavigationProps } from '../../sample/BottomNavigation';
+import { RenderAppBarDefault, AppBarProps } from '../../sample/AppBar';
+import { RenderOverlayDefault, OverlayProps } from '../../sample/Overlay';
+import NavDoc from '../../components/NavDocumentation';
 
 const DocumentationManaKit = ({ frontMatter: { title }, mdxSource }: any) => {
   return (
     <Fragment>
-      <Sidebar />
-      <div className="mt-4">
+      {/* <Sidebar /> */}
+      <NavDoc />
+      <Container fillHeight>
         <h1>{title}</h1>
-        <MDXRemote {...mdxSource} components={{ Button, SyntaxHighlighter }} />
-      </div>
+        <MDXRemote
+          {...mdxSource}
+          components={{
+            RenderBtnDefault,
+            BtnProps,
+            RenderIconDefault,
+            IconProps,
+            RenderToolbarDefault,
+            ToolbarProps,
+            RenderBottomNavigationDefault,
+            BottomNavigationProps,
+            RenderAppBarDefault,
+            AppBarProps,
+            RenderOverlayDefault,
+            OverlayProps,
+            Button,
+            SyntaxHighlighter,
+            Btn,
+            Icon,
+            Spacer,
+            Toolbar,
+            ToolbarTitle,
+            ToolbarItems,
+            AppBar,
+            AppBarTitle,
+            Sample,
+          }}
+        />
+      </Container>
     </Fragment>
   );
 };

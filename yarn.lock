@@ -3416,10 +3416,10 @@ make-dir@^3.0.2, make-dir@^3.1.0:
   dependencies:
     semver "^6.0.0"
 
-manakit@0.2.152:
-  version "0.2.152"
-  resolved "https://registry.yarnpkg.com/manakit/-/manakit-0.2.152.tgz#ccb0a4158a3e730626e748da239940c83377c875"
-  integrity sha512-hVyrLLYvnlFk+ZqKbVKqPSMVasSgmOj7Ud+j1/I2lSb1RL2lWcYcekTNtx4yKSt6UsXvVT+p6IjvQkN7CuIqpw==
+manakit@0.2.219:
+  version "0.2.219"
+  resolved "https://registry.yarnpkg.com/manakit/-/manakit-0.2.219.tgz#11013c06228fcf76ed8819cfedf1feebece6678f"
+  integrity sha512-hj7lpOQ5H09Q4K9Ylm9CYdysIalWhUqeImwXUZwroC9qUiqwxwFOjFqQZN3GDzWymtiR4CoBGd3btbvwZE4YVg==
 
 markdown-extensions@^1.0.0:
   version "1.1.1"

@@ -5,15 +5,16 @@ import path from 'path';
 import matter from 'gray-matter';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import Button from '../../components/Button';
+import { Container, Row, Col, Spacer } from 'manakit';
 
 const pathFiles = 'src/content/community';
 
 const CommunityPage = ({ frontMatter: { title }, mdxSource }: any) => {
   return (
-    <div className="mt-4">
+    <Container>
       <h1>{title}</h1>
-      <MDXRemote {...mdxSource} components={{ Button, SyntaxHighlighter }} />
-    </div>
+      <MDXRemote {...mdxSource} components={{ Button, SyntaxHighlighter, Container, Row, Col, Spacer }} />
+    </Container>
   );
 };
 

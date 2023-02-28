@@ -29,7 +29,13 @@
     "category": "components",
     "children": [
       { "name": "Alert", "slug": "demo-uno" },
-      { "name": "Application", "slug": "demo" }
+      { "name": "Application", "slug": "demo" },
+      { "name": "Buttons", "slug": "buttons" },
+      { "name": "Icons", "slug": "icons" },
+      { "name": "Toolbars", "slug": "toolbar" },
+      { "name": "Bottom Navigation", "slug": "bottom-navigation" },
+      { "name": "App Bar", "slug": "app-bar" },
+      { "name": "Overlay", "slug": "overlay" }
     ]
   }
 ]

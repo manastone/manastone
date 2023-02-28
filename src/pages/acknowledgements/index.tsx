@@ -1,7 +1,9 @@
+import { Container } from 'manakit';
+
 /* eslint-disable react/no-unescaped-entities */
 const Acknowledgements = () => {
   return (
-    <div className="mt-3">
+    <Container>
       <h1>REMERCIEMENTS</h1>
 
       <h4>Voici les bibliothèques open source que nous utilisons pour nos projets :</h4>
@@ -15,7 +17,7 @@ const Acknowledgements = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </Container>
   );
 };
 export default Acknowledgements;

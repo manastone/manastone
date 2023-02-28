@@ -1,3 +1,5 @@
+import { Container } from 'manakit';
+
 export default function FourHundredFour() {
-  return <div className="mt-5">404</div>;
+  return <Container className="mt-5">404</Container>;
 }

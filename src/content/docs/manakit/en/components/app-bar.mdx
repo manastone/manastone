@@ -1,0 +1,46 @@
+---
+nav: App Bar
+meta:
+  title: App Bar component
+  description: The icon component is compatible with multiple common icon fonts such as Material Design Icons and more.
+  keywords: app-bar, manakit app-bar component, react app-bar component
+related:
+  - /components/icons/
+---
+
+# App Bar
+
+The **AppBar** component is pivotal to any graphical user interface (GUI), as it generally is the primary source of site navigation. The **AppBar** component works great in conjunction with a **NavigationDrawer** for providing site navigation in your application.
+The **AppBar** component is used for application-wide actions and information.
+
+<RenderAppBarDefault />
+
+## Sample
+
+### Dense
+
+Dense appbar reduce their height to 48px.
+
+<Sample>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
+    <AppBar dense>
+      <AppBarTitle>Title</AppBarTitle>
+    </AppBar>
+  </div>
+</Sample>
+
+### Flat
+
+**flat** appbar still maintain their background color, but have no box shadow with **elevation**.
+
+<Sample>
+  <div className="d-flex justify-space-around align-center flex-column flex-sm-row fill-height">
+    <AppBar flat color="primary">
+      <AppBarTitle>Title</AppBarTitle>
+    </AppBar>
+  </div>
+</Sample>
+
+## Props
+
+<AppBarProps />
